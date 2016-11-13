@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Handling the User Mouse Input</title>
+<style type="text/css">
+
+#paperCanvas{
+	width: 600px;
+	height: 450px;
+	border: solid 1px blue;
+}
+
+
+</style>
+</head>
+<body>
+<canvas id="paperCanvas"></canvas>
+
+<script type="text/javascript" src="..\node_modules\paper\dist\paper-full.js"></script>
+
+<script>
+// 'use strict'
+paper.install(window);
+console.log("came here");
+paper.setup(document.getElementById('paperCanvas'));
+paper.view.draw();
+var tools = new Tool();
+var count = 6;
+tools.onMouseDrag = function(userEvent){
+	var c = Shape.Circle(userEvent.point.x, userEvent.point.y, count);
+	c.fillColor = 'green';	
+}
+tools.onMouseDown = function(userEvent){
+	var c = Shape.Circle(userEvent.point.x, userEvent.point.y, count);
+	c.fillColor = 'blue';
+}
+</script>
+</body>
+</html>
