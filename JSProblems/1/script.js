@@ -7,8 +7,6 @@ var b = document.getElementsByName("var2")[0].value;
 a = (Number(a) + Number(b));
 b = (Number(a) - Number(b));
 a = (Number(a) - Number(b));
-console.log(a);
-console.log(b);
 document.getElementsByName('var3')[0].value = a;
 document.getElementsByName('var4')[0].value = b;
 }
