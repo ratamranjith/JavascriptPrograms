@@ -1,3 +1,4 @@
+// Normal Function Declaration
 function declaration() {
   console.log("This is a sample function declaration");
 }
