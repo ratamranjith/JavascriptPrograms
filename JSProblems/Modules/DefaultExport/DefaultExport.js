@@ -1,2 +1,3 @@
 let names = ["Truder", "Coder", "Designer", "Gamer"];
-export {names};
+let objectNames = {"uname" : "Truder"}
+export {names, objectNames};
