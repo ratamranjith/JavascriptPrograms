@@ -5,5 +5,4 @@ var Company = (function Module(employee){
         console.log(employee, question);
     }
 })("Truder, ");
-
 Company.askMe("Still are you being loyal ?");
