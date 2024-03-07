@@ -36,3 +36,6 @@ const object1 = {
   let bindMessage = logMessage.bind(object1);
   bindMessage();
 
+// Perform Addition
+let increment = (value) => value + 1
+console.log(increment(34));
