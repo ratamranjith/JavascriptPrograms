@@ -32,164 +32,188 @@ This document provides a list of commonly used JavaScript string methods along w
 
 ## Method Usages
 
-```javascript
-const str = "Hello";
-console.log(str.charAt(1)); // "e"
-charCodeAt(index)
-Returns the Unicode of the character at the specified index.
-```
+- **charAt(index)**
 
 ```javascript
 const str = "Hello";
-console.log(str.charCodeAt(1)); // 101
-concat(...strings)
-Combines two or more strings.
+console.log(str.charAt(1)); // 'e'
 ```
 
+- **charCodeAt(index)**
+
 ```javascript
-const str1 = "Hello";
-const str2 = "World";
-console.log(str1.concat(" ", str2)); // "Hello World"
-includes(searchString, position)
-Checks if a string contains a specified value.
+  \\Returns the Unicode of the character at the specified index.
+  const str = "Hello";
+  console.log(str.charCodeAt(1)); // 101
 ```
 
+- **concat(...strings)**
+
 ```javascript
-const str = "Hello World";
-console.log(str.includes("World")); // true
-indexOf(searchValue, fromIndex)
-Returns the index of the first occurrence of a specified value.
+  \\Combines two or more strings.
+  const str1 = "Hello";
+  const str2 = "World";
+  console.log(str1.concat(" ", str2)); // "Hello World"
 ```
 
+- **includes(searchString, position)**
+
 ```javascript
-const str = "Hello World";
-console.log(str.indexOf("World")); // 6
-lastIndexOf(searchValue, fromIndex)
-Returns the index of the last occurrence of a specified value.
+  \\Checks if a string contains a specified value.
+  const str = "Hello World";
+  console.log(str.includes("World")); // true
 ```
 
+- **indexOf(searchValue, fromIndex)**
+
 ```javascript
-const str = "Hello World Hello";
-console.log(str.lastIndexOf("Hello")); // 12
-match(regexp)
-Executes a search for a match between a regular expression and the string.
+  \\Returns the index of the first occurrence of a specified value.
+  const str = "Hello World";
+  console.log(str.indexOf("World")); // 6
 ```
 
+- **lastIndexOf(searchValue, fromIndex)**
+
 ```javascript
-const str = "The quick brown fox";
-const result = str.match(/quick/);
-console.log(result[0]); // "quick"
-repeat(count)
-Returns a new string with a specified number of copies of the original string.
+  \\Returns the index of the last occurrence of a specified value.
+  const str = "Hello World Hello";
+  console.log(str.lastIndexOf("Hello")); // 12
 ```
 
+- **match(regexp)**
+
 ```javascript
-const str = "Hello";
-console.log(str.repeat(3)); // "HelloHelloHello"
-replace(searchValue, newValue)
-Replaces the first occurrence of a specified value with a new value.
+  \\Executes a search for a match between a regular expression and the string.
+  const str = "The quick brown fox";
+  const result = str.match(/quick/);
+  console.log(result[0]); // "quick"
 ```
 
-````javascript
-const str = "Hello World";```
-console.log(str.replace("World", "```javascript
-slice(beginIndex, endIndex)
-Extracts a section of a string and returns it as a new string.
-````
+- **repeat(count)**
 
 ```javascript
-const str = "Hello World";
-console.log(str.slice(0, 5)); // "Hello"
-split(separator, limit)
-Splits a string into an array of substrings.
+  \\Returns a new string with a specified number of copies of the original string.
+  const str = "Hello";
+  console.log(str.repeat(3)); // "HelloHelloHello"
 ```
 
-```javascript
-const str = "Hello World";
-console.log(str.split(" ")); // ["Hello", "World"]
-substring(indexStart, indexEnd)
-Returns a new string containing the characters between two indices.
-```
+- **replace(searchValue, newValue)**
 
 ```javascript
-const str = "Hello World";
-console.log(str.substring(0, 5)); // "Hello"
-toLowerCase()
-Returns the string converted to lowercase.
+  \\Replaces the first occurrence of a specified value with a new value.
+  const str = "Hello World";
+  console.log(str.replace("World", "JavaScript")); // "Hello JavaScript"
 ```
 
-```javascript
-const str = "Hello World";
-console.log(str.toLowerCase()); // "hello world"
-toUpperCase()
-Returns the string converted to uppercase.
-```
+- **slice(beginIndex, endIndex)**
 
 ```javascript
-const str = "Hello World";
-console.log(str.toUpperCase()); // "HELLO WORLD"
-trim()
-Removes whitespace from both ends of a string.
+  \\Extracts a section of a string and returns it as a new string.
+  const str = "Hello World";
+  console.log(str.slice(0, 5)); // "Hello"
 ```
 
-```javascript
-const str = " Hello World ";
-console.log(str.trim()); // "Hello World"
-startsWith(searchString, position)
-Checks if a string starts with a specified value.
-```
+- **split(separator, limit)**
 
 ```javascript
-const str = "Hello World";
-console.log(str.startsWith("Hello")); // true
-endsWith(searchString, length)
-Checks if a string ends with a specified value.
+  \\Splits a string into an array of substrings.
+  const str = "Hello World";
+  console.log(str.split(" ")); // ["Hello", "World"]
 ```
 
-```javascript
-const str = "Hello World";
-console.log(str.endsWith("World")); // true
-padStart(targetLength, padString)
-Pads the current string with another string until the resulting string reaches the given length.
-```
+- **substring(indexStart, indexEnd)**
 
 ```javascript
-const str = "5";
-console.log(str.padStart(4, "0")); // "0005"
-padEnd(targetLength, padString)
-Pads the current string with another string until the resulting string reaches the given length.
+  \\Returns a new string containing the characters between two indices.
+  const str = "Hello World";
+  console.log(str.substring(0, 5)); // "Hello"
 ```
 
-```javascript
-const str = "5";
-console.log(str.padEnd(4, "0")); // "5000"
-fromCharCode(...codes)
-Converts Unicode values to characters.
-```
+- **toLowerCase()**
 
 ```javascript
-console.log(String.fromCharCode(72, 101, 108, 108, 111)); // "Hello"
-at(index)
-Returns the character at a specified index, allowing for negative values.
+  \\Returns the string converted to lowercase.
+  const str = "Hello World";
+  console.log(str.toLowerCase()); // "hello world"
 ```
 
-```javascript
-const str = "Hello";
-console.log(str.at(-1)); // "o"
-codePointAt(index)
-Returns a non-negative integer that is the Unicode code point value of the character at the specified index.
-```
+- **toUpperCase()**
 
 ```javascript
-const str = "Hello";
-console.log(str.codePointAt(0)); // 72
-normalize(form)
-Returns the Unicode Normalization Form of the string.
+  \\Returns the string converted to uppercase.
+  const str = "Hello World";
+  console.log(str.toUpperCase()); // "HELLO WORLD"
 ```
 
+- **trim()**
+
 ```javascript
-const str = "e\u0301";
-console.log(str.normalize("NFC")); // "é"
-[trimStart() or trimLeft()](https://developer.mozilla.org/en-US
+  \\Removes whitespace from both ends of a string.
+  const str = " Hello World ";
+  console.log(str.trim()); // "Hello World"
+```
+
+- **startsWith(searchString, position)**
+
+```javascript
+  \\Checks if a string starts with a specified value.
+  const str = "Hello World";
+  console.log(str.startsWith("Hello")); // true
+```
+
+- **endsWith(searchString, length)**
+
+```javascript
+  \\Checks if a string ends with a specified value.
+  const str = "Hello World";
+  console.log(str.endsWith("World")); // true
+```
+
+- **padStart(targetLength, padString)**
+
+```javascript
+  \\Pads the current string with another string until the resulting string reaches the given length.
+  const str = "5";
+  console.log(str.padStart(4, "0")); // "0005"
+```
+
+- **padEnd(targetLength, padString)**
+
+```javascript
+  \\Pads the current string with another string until the resulting string reaches the given length.
+  const str = "5";
+  console.log(str.padEnd(4, "0")); // "5000"
+```
+
+- **fromCharCode(...codes)**
+
+```javascript
+  \\Converts Unicode values to characters.
+  console.log(String.fromCharCode(72, 101, 108, 108, 111)); // "Hello"
+```
+
+- **at(index)**
+
+```javascript
+  \\Returns the character at a specified index, allowing for negative values.
+  const str = "Hello";
+  console.log(str.at(-1)); // "o"
+```
+
+- **codePointAt(index)**
+
+```javascript
+  \\Returns a non-negative integer that is the Unicode code point value of the character at the specified index.
+  const str = "Hello";
+  console.log(str.codePointAt(0)); // 72
+```
+
+- **normalize(form)**
+
+```javascript
+  \\Returns the Unicode Normalization Form of the string.
+  const str = "e\u0301";
+  console.log(str.normalize("NFC")); // "é"
+  [trimStart() or trimLeft()]
 
 ```
