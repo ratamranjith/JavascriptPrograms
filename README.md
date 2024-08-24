@@ -67,14 +67,35 @@
 
 ## Variables
 
-| Feature                          | `var`                                                                            | `let`                                                                                            | `const`                                                                                          |
-| -------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| **Scope**                  | Function scope                                                                     | Block scope                                                                                        | Block scope                                                                                        |
+| Feature                    | `var`                                                                            | `let`                                                                                              | `const`                                                                                            |
+| -------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Scope**                  | Function scope                                                                   | Block scope                                                                                        | Block scope                                                                                        |
 | **Hoisting**               | Hoisted to the top of the function or global scope; initialized with `undefined` | Hoisted to the top of the block but not initialized; ReferenceError if accessed before declaration | Hoisted to the top of the block but not initialized; ReferenceError if accessed before declaration |
-| **Re-declaration**         | Allowed within the same scope                                                      | Not allowed within the same block                                                                  | Not allowed within the same block                                                                  |
-| **Re-assignment**          | Allowed                                                                            | Allowed                                                                                            | Not allowed                                                                                        |
-| **Block Scope Example**    | `if (true) { var x = 1; } console.log(x); // Outputs 1`                          | `if (true) { let x = 1; } console.log(x); // ReferenceError`                                     | `if (true) { const x = 1; } console.log(x); // ReferenceError`                                   |
+| **Re-declaration**         | Allowed within the same scope                                                    | Not allowed within the same block                                                                  | Not allowed within the same block                                                                  |
+| **Re-assignment**          | Allowed                                                                          | Allowed                                                                                            | Not allowed                                                                                        |
+| **Block Scope Example**    | `if (true) { var x = 1; } console.log(x); // Outputs 1`                          | `if (true) { let x = 1; } console.log(x); // ReferenceError`                                       | `if (true) { const x = 1; } console.log(x); // ReferenceError`                                     |
 | **Global Object Property** | Creates a property on the global object (e.g.,`window` in browsers)              | Does not create a property on the global object                                                    | Does not create a property on the global object                                                    |
+
+- **Example Usage**
+
+```
+var name = 'Alice';
+name = 'Bob';
+console.log(name); // Outputs Bob
+
+```
+
+```
+let age = 30;
+age = 31;
+console.log(age); // Outputs 31
+```
+
+```
+const PI = 3.14;
+PI = 3.1415; // Error: Assignment to constant variable
+console.log(PI); // Outputs 3.14
+```
 
 ## Hosting
 
