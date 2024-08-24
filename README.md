@@ -55,7 +55,26 @@
 
 ## Introduction
 
+- JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
+
+## History
+
+- **Netscape Communications** hired **Brendan Eich** to develop Javascript
+
+  - Mocha [Initial release]
+  - LiveScript[Renamed]
+  - Javascript[Finally]
+
 ## Variables
+
+| Feature                          | `var`                                                                            | `let`                                                                                            | `const`                                                                                          |
+| -------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Scope**                  | Function scope                                                                     | Block scope                                                                                        | Block scope                                                                                        |
+| **Hoisting**               | Hoisted to the top of the function or global scope; initialized with `undefined` | Hoisted to the top of the block but not initialized; ReferenceError if accessed before declaration | Hoisted to the top of the block but not initialized; ReferenceError if accessed before declaration |
+| **Re-declaration**         | Allowed within the same scope                                                      | Not allowed within the same block                                                                  | Not allowed within the same block                                                                  |
+| **Re-assignment**          | Allowed                                                                            | Allowed                                                                                            | Not allowed                                                                                        |
+| **Block Scope Example**    | `if (true) { var x = 1; } console.log(x); // Outputs 1`                          | `if (true) { let x = 1; } console.log(x); // ReferenceError`                                     | `if (true) { const x = 1; } console.log(x); // ReferenceError`                                   |
+| **Global Object Property** | Creates a property on the global object (e.g.,`window` in browsers)              | Does not create a property on the global object                                                    | Does not create a property on the global object                                                    |
 
 ## Hosting
 
