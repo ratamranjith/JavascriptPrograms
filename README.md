@@ -4,54 +4,53 @@
 
 1. [Introduction](#introduction)
 2. [Variables](#variables)
-3. [Hosting](#hosting)
+3. [Hoisting](#hoisting)
 4. [Scope](#scope)
-5. [Variable Keyword Scope](#variable-keyword-scope)
-6. [Coercion](#coercion)
-7. [Logical Operator Return Values](#logical-operator-return-values)
-8. [Equality Operators](#equality-operators)
-9. [Nullish Coalescing Operator](#nullish-coalescing-operator)
-10. [String Datatype &amp; String Methods](#string-datatype--string-methods)
-11. [Functions](#functions)
-12. [Closure](#closure)
-13. [Arrays](#arrays)
-14. [Array forEach Method](#array-foreach-method)
-15. [Array map Method](#array-map-method)
-16. [Array filter Method](#array-filter-method)
-17. [Array find Method](#array-find-method)
-18. [Array some Method](#array-some-method)
-19. [Object](#object)
-20. [Object values Method](#object-values-method)
-21. [Object keys Method](#object-keys-method)
-22. [Object entries Method](#object-entries-method)
-23. [Object freeze Method](#object-freeze-method)
-24. [Object seal Method](#object-seal-method)
-25. [this Keyword](#this-keyword)
-26. [A New Keyword](#a-new-keyword)
-27. [Prototypes](#prototypes)
-28. [Class](#class)
-29. [For...in Loop](#forin-loop)
-30. [Try Catch Statement](#try-catch-statement)
-31. [Try Catch Finally](#try-catch-finally)
-32. [Understanding Promise](#understanding-promise)
-33. [Promise Then Method](#promise-then-method)
-34. [Promise Catch Method](#promise-catch-method)
-35. [Why We Need Promise?](#why-we-need-promise)
-36. [Async / Await](#async--await)
-37. [JavaScript DOM](#javascript-dom)
-38. [Getting Element by Id](#getting-element-by-id)
-39. [Getting Element by Name](#getting-element-by-name)
-40. [Getting Elements by Class Name](#getting-elements-by-class-name)
-41. [Getting Elements by Tag Name](#getting-elements-by-tag-name)
-42. [Getting Child Elements](#getting-child-elements)
-43. [Getting Parent Element](#getting-parent-element)
-44. [Create Element](#create-element)
-45. [Remove Element](#remove-element)
-46. [Get Attribute of Element](#get-attribute-of-element)
-47. [Create or Update Attribute](#create-or-update-attribute)
-48. [Types of Event Handlers](#types-of-event-handlers)
-49. [Handling Mouse Events](#handling-mouse-events)
-50. [Handling Keyboard Events](#handling-keyboard-events)
+5. [Coercion](#coercion)
+6. [Logical Operator Return Values](#logical-operator-return-values)
+7. [Equality Operators](#equality-operators)
+8. [Nullish Coalescing Operator](#nullish-coalescing-operator)
+9. [String Datatype &amp; String Methods](String/README.md)
+10. [Functions](#functions)
+11. [Closure](#closure)
+12. [Arrays](#arrays)
+13. [Array forEach Method](#array-foreach-method)
+14. [Array map Method](#array-map-method)
+15. [Array filter Method](#array-filter-method)
+16. [Array find Method](#array-find-method)
+17. [Array some Method](#array-some-method)
+18. [Object](#object)
+19. [Object values Method](#object-values-method)
+20. [Object keys Method](#object-keys-method)
+21. [Object entries Method](#object-entries-method)
+22. [Object freeze Method](#object-freeze-method)
+23. [Object seal Method](#object-seal-method)
+24. [this Keyword](#this-keyword)
+25. [A New Keyword](#a-new-keyword)
+26. [Prototypes](#prototypes)
+27. [Class](#class)
+28. [For...in Loop](#forin-loop)
+29. [Try Catch Statement](#try-catch-statement)
+30. [Try Catch Finally](#try-catch-finally)
+31. [Understanding Promise](#understanding-promise)
+32. [Promise Then Method](#promise-then-method)
+33. [Promise Catch Method](#promise-catch-method)
+34. [Why We Need Promise?](#why-we-need-promise)
+35. [Async / Await](#async--await)
+36. [JavaScript DOM](#javascript-dom)
+37. [Getting Element by Id](#getting-element-by-id)
+38. [Getting Element by Name](#getting-element-by-name)
+39. [Getting Elements by Class Name](#getting-elements-by-class-name)
+40. [Getting Elements by Tag Name](#getting-elements-by-tag-name)
+41. [Getting Child Elements](#getting-child-elements)
+42. [Getting Parent Element](#getting-parent-element)
+43. [Create Element](#create-element)
+44. [Remove Element](#remove-element)
+45. [Get Attribute of Element](#get-attribute-of-element)
+46. [Create or Update Attribute](#create-or-update-attribute)
+47. [Types of Event Handlers](#types-of-event-handlers)
+48. [Handling Mouse Events](#handling-mouse-events)
+49. [Handling Keyboard Events](#handling-keyboard-events)
 
 ## Introduction
 
@@ -65,7 +64,7 @@
   - LiveScript[Renamed]
   - Javascript[Finally]
 
-## Variables
+## Variables (Interview Question)
 
 | Feature                    | `var`                                                                            | `let`                                                                                              | `const`                                                                                            |
 | -------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -97,11 +96,52 @@ PI = 3.1415; // Error: Assignment to constant variable
 console.log(PI); // Outputs 3.14
 ```
 
-## Hosting
+## Hoisting (Interview Question)
+
+- Hoisting in JavaScript is a behavior where variables and function declarations are moved ("hoisted") to the top of their
+  containing scope before the code is executed.
+- This means that we can use variables and functions before you declare them in the code.
+- **Variable and Function** Hoisting are two different types of hoisting.
+
+### Usage Examples:
+
+##### 1. Variable Hoisting
+
+```javascript
+console.log(myVar); // Output: undefined
+var myVar = 10;
+```
+
+##### 2. Function Hoisting
+
+```javascript
+greet(); // Output: "Hello, world!"
+
+function greet() {
+  console.log("Hello, world!");
+}
+```
 
 ## Scope
 
-## Variable Keyword Scope
+- Scope refers to the accessibility of variables, functions, and objects in certain parts of your code.
+- It determines where values and expressions are visible or can be referenced.
+- There are several types of scope in JavaScript:
+  - Global scope
+  - Local scope
+  - Block scope
+  - Function Scope vs. Block Scope (Interview questions)
+  - Lexical Scope (Static Scope)
+  - Global Object (Interview questions)
+- **Table Comparison**
+  | **Scope Type** | **Declaration** | **Accessible Where** | **Example Variable Declaration** | **Notes** |
+  |----------------------|-----------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+  | **Global Scope** | Variables declared outside any function or block | Anywhere in the code, including inside functions | `var globalVar = "I'm global!";` | Global variables are properties of the `window` object in browsers. |
+  | **Local Scope** | Variables declared inside a function | Only within the function where they are declared | `function myFunc() { var localVar = "I'm local!"; }` | Local variables cannot be accessed outside the function. |
+  | **Block Scope** | Variables declared inside a block (e.g., `if`, `for`), using `let` or `const` | Only within the block where they are declared | `if (true) { let blockVar = "I'm block-scoped!"; }` | Block-scoped variables are confined to the block they are declared in. |
+  | **Function Scope** | Variables declared using `var` within a function | Accessible throughout the entire function | `function myFunc() { var funcScoped = "I'm function-scoped!"; }` | `var` is not block-scoped; it is function-scoped, available across the function. |
+  | **Lexical Scope** | Nested functions within other functions | Inner functions can access variables from their outer functions | `function outerFunc() { var outerVar = "I'm outer!"; function innerFunc() { console.log(outerVar); } }` | Lexical scope determines how variable names are resolved in nested functions. |
+  | **Global Object** | Variables declared in the global scope | Anywhere in the code, globally as properties of the global object | `var globalVar = "Hello!"; console.log(window.globalVar);` | In browsers, the global object is the `window` object. |
 
 ## Coercion
 
