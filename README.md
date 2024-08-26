@@ -145,6 +145,126 @@ function greet() {
 
 ## Coercion
 
+## What is Type Coercion?
+
+Type coercion in JavaScript is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). JavaScript provides both implicit and explicit ways to perform type coercion.
+
+## Table of Contents
+
+1. [Implicit Coercion](#implicit-coercion)
+   - [String Coercion](#string-coercion)
+   - [Number Coercion](#number-coercion)
+   - [Boolean Coercion](#boolean-coercion)
+2. [Explicit Coercion](#explicit-coercion)
+   - [`String()`](#string)
+   - [`Number()`](#number)
+   - [`Boolean()`](#boolean)
+   - [`parseInt()`](#parseint)
+   - [`parseFloat()`](#parsefloat)
+   - [`toString()`](#tostring)
+   - [`+` (Unary Plus)](#unary-plus)
+   - [`!!` (Double Negation)](#double-negation)
+
+#### Implicit Coercion
+
+Implicit coercion happens automatically when JavaScript tries to perform an operation on mismatched types.
+
+##### String Coercion
+
+When using the `+` operator with a string, JavaScript converts the other operand to a string.
+
+```javascript
+const result = "The number is " + 10;
+console.log(result); // "The number is 10"
+```
+
+**Number Coercion**
+
+- When using mathematical operators (other than +), JavaScript converts strings to numbers.
+
+```javascript
+const result = "5" * "2";
+console.log(result); // 10
+```
+
+**Boolean Coercion**
+
+- Values in conditions are automatically coerced to booleans.
+
+```javascript
+const value = "Hello";
+if (value) {
+  console.log("This is true"); // "This is true"
+}
+```
+
+### Explicit Coercion
+
+- Explicit coercion is when you explicitly convert a value to another type using JavaScript functions or operators.
+
+String()
+Converts a value to a string.
+
+```javascript
+const num = 10;
+const str = String(num);
+console.log(str); // "10"
+
+Number()
+Converts a value to a number.
+const str = "123";
+const num = Number(str);
+console.log(num); // 123
+Boolean()
+Converts a value to a boolean.
+
+javascript
+
+const str = "Hello";
+const bool = Boolean(str);
+console.log(bool); // true
+parseInt()
+Parses a string and returns an integer.
+
+javascript
+
+const str = "10px";
+const num = parseInt(str);
+console.log(num); // 10
+parseFloat()
+Parses a string and returns a floating-point number.
+
+javascript
+
+const str = "10.5px";
+const num = parseFloat(str);
+console.log(num); // 10.5
+toString()
+Converts and returns a string representation of the value.
+
+javascript
+
+const num = 10;
+const str = num.toString();
+console.log(str); // "10"
+
+- (Unary Plus)
+  Converts a value to a number.
+
+javascript
+
+const str = "123";
+const num = +str;
+console.log(num); // 123
+!! (Double Negation)
+Converts a value to a boolean.
+
+javascript
+
+const value = "Hello";
+const bool = !!value;
+console.log(bool); // true
+
 ## Logical Operator Return Values
 
 ## Equality Operators
@@ -232,3 +352,9 @@ function greet() {
 ## Handling Mouse Events
 
 ## Handling Keyboard Events
+
+```
+
+```
+
+```
