@@ -133,15 +133,14 @@ function greet() {
   - Function Scope vs. Block Scope (Interview questions)
   - Lexical Scope (Static Scope)
   - Global Object (Interview questions)
-- **Table Comparison**
-  | **Scope Type** | **Declaration** | **Accessible Where** | **Example Variable Declaration** | **Notes** |
-  |----------------------|-----------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
-  | **Global Scope** | Variables declared outside any function or block | Anywhere in the code, including inside functions | `var globalVar = "I'm global!";` | Global variables are properties of the `window` object in browsers. |
-  | **Local Scope** | Variables declared inside a function | Only within the function where they are declared | `function myFunc() { var localVar = "I'm local!"; }` | Local variables cannot be accessed outside the function. |
-  | **Block Scope** | Variables declared inside a block (e.g., `if`, `for`), using `let` or `const` | Only within the block where they are declared | `if (true) { let blockVar = "I'm block-scoped!"; }` | Block-scoped variables are confined to the block they are declared in. |
-  | **Function Scope** | Variables declared using `var` within a function | Accessible throughout the entire function | `function myFunc() { var funcScoped = "I'm function-scoped!"; }` | `var` is not block-scoped; it is function-scoped, available across the function. |
-  | **Lexical Scope** | Nested functions within other functions | Inner functions can access variables from their outer functions | `function outerFunc() { var outerVar = "I'm outer!"; function innerFunc() { console.log(outerVar); } }` | Lexical scope determines how variable names are resolved in nested functions. |
-  | **Global Object** | Variables declared in the global scope | Anywhere in the code, globally as properties of the global object | `var globalVar = "Hello!"; console.log(window.globalVar);` | In browsers, the global object is the `window` object. |
+- | **Table Comparison** | **Scope Type**                                                               | **Declaration**                                                   | **Accessible Where**                                                                                    | **Example Variable Declaration**                                                 | **Notes** |
+  | -------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | --------- |
+  | **Global Scope**     | Variables declared outside any function or block                             | Anywhere in the code, including inside functions                  | `var globalVar = "I'm global!";`                                                                        | Global variables are properties of the `window` object in browsers.              |
+  | **Local Scope**      | Variables declared inside a function                                         | Only within the function where they are declared                  | `function myFunc() { var localVar = "I'm local!"; }`                                                    | Local variables cannot be accessed outside the function.                         |
+  | **Block Scope**      | Variables declared inside a block (e.g.,`if`, `for`), using `let` or `const` | Only within the block where they are declared                     | `if (true) { let blockVar = "I'm block-scoped!"; }`                                                     | Block-scoped variables are confined to the block they are declared in.           |
+  | **Function Scope**   | Variables declared using `var` within a function                             | Accessible throughout the entire function                         | `function myFunc() { var funcScoped = "I'm function-scoped!"; }`                                        | `var` is not block-scoped; it is function-scoped, available across the function. |
+  | **Lexical Scope**    | Nested functions within other functions                                      | Inner functions can access variables from their outer functions   | `function outerFunc() { var outerVar = "I'm outer!"; function innerFunc() { console.log(outerVar); } }` | Lexical scope determines how variable names are resolved in nested functions.    |
+  | **Global Object**    | Variables declared in the global scope                                       | Anywhere in the code, globally as properties of the global object | `var globalVar = "Hello!"; console.log(window.globalVar);`                                              | In browsers, the global object is the `window` object.                           |
 
 ## Coercion
 
@@ -202,68 +201,84 @@ if (value) {
 
 - Explicit coercion is when you explicitly convert a value to another type using JavaScript functions or operators.
 
-String()
-Converts a value to a string.
+**String()**
+
+- Converts a value to a string.
 
 ```javascript
 const num = 10;
 const str = String(num);
 console.log(str); // "10"
+```
 
-Number()
-Converts a value to a number.
+**Number()**
+
+- Converts a value to a number.
+
+```javascript
 const str = "123";
 const num = Number(str);
 console.log(num); // 123
-Boolean()
-Converts a value to a boolean.
+```
 
-javascript
+**Boolean()**
 
+- Converts a value to a boolean.
+
+```javascript
 const str = "Hello";
 const bool = Boolean(str);
 console.log(bool); // true
-parseInt()
-Parses a string and returns an integer.
+```
 
-javascript
+**parseInt()**
 
+- Parses a string and returns an integer.
+
+```javascript
 const str = "10px";
 const num = parseInt(str);
 console.log(num); // 10
-parseFloat()
-Parses a string and returns a floating-point number.
+```
 
-javascript
+**parseFloat()**
 
+- Parses a string and returns a floating-point number.
+
+```javascript
 const str = "10.5px";
 const num = parseFloat(str);
 console.log(num); // 10.5
-toString()
-Converts and returns a string representation of the value.
+```
 
-javascript
+**toString()**
 
+- Converts and returns a string representation of the value.
+
+```javascript
 const num = 10;
 const str = num.toString();
 console.log(str); // "10"
+```
 
-- (Unary Plus)
-  Converts a value to a number.
+**(Unary Plus)**
+Converts a value to a number.
 
-javascript
-
+```javascript
 const str = "123";
 const num = +str;
 console.log(num); // 123
-!! (Double Negation)
-Converts a value to a boolean.
+```
 
-javascript
+**!! (Double Negation)**
 
+- Converts a value to a boolean.
+
+```javascript
 const value = "Hello";
 const bool = !!value;
 console.log(bool); // true
+```
 
 ## Logical Operator Return Values
 
@@ -317,11 +332,267 @@ console.log(bool); // true
 
 ## Understanding Promise
 
+- A Promise contains both the producing code and calls to the consuming code
+
 ## Promise Then Method
 
 ## Promise Catch Method
 
 ## Why We Need Promise?
+
+## List of Methods
+
+1. [`Promise.resolve(value)`](#promiseresolvevalue)
+2. [`Promise.reject(reason)`](#promiserejectreason)
+3. [`Promise.all(iterable)`](#promisealliterable)
+4. [`Promise.race(iterable)`](#promiseraceiterable)
+5. [`Promise.any(iterable)`](#promiseanyiterable)
+6. [`Promise.allSettled(iterable)`](#promiseallsettlediterable)
+7. [`Promise.prototype.then(onFulfilled, onRejected)`](#promiseprototypethenonfulfilled-onrejected)
+8. [`Promise.prototype.catch(onRejected)`](#promiseprototypecatchonrejected)
+9. [`Promise.prototype.finally(onFinally)`](#promiseprototypefinallyonfinally)
+
+## Method Usages
+
+### `Promise.resolve(value)`
+
+Returns a `Promise` object that is resolved with the given value.
+
+```javascript
+const promise = Promise.resolve(42);
+promise.then((value) => {
+  console.log(value); // 42
+});
+```
+
+### `Promise.reject(reason)`
+
+Returns a `Promise` object that is rejected with the given reason.
+
+```javascript
+const promise = Promise.reject(new Error("Something went wrong!"));
+promise.catch((error) => {
+  console.error(error); // Error: Something went wrong!
+});
+```
+
+### `Promise.all(iterable)`
+
+Returns a `Promise` that resolves when all of the promises in the iterable have resolved or rejects if any promise rejects.
+
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "foo");
+});
+
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values); // [3, 42, 'foo']
+});
+```
+
+### `Promise.race(iterable)`
+
+Returns a `Promise` that resolves or rejects as soon as one of the promises in the iterable resolves or rejects.
+
+```javascript
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 500, "one");
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "two");
+});
+
+Promise.race([promise1, promise2]).then((value) => {
+  console.log(value); // "two" - because it was the fastest
+});
+```
+
+### `Promise.any(iterable)`
+
+Returns a `Promise` that resolves as soon as any of the promises in the iterable resolves, or rejects if all of the promises reject.
+
+```javascript
+const promise1 = Promise.reject(new Error("fail1"));
+const promise2 = Promise.reject(new Error("fail2"));
+const promise3 = Promise.resolve(42);
+
+Promise.any([promise1, promise2, promise3])
+  .then((value) => {
+    console.log(value); // 42
+  })
+  .catch((error) => {
+    console.error(error); // AggregateError: All promises were rejected
+  });
+```
+
+### `Promise.allSettled(iterable)`
+
+Returns a `Promise` that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describe the outcome of each promise.
+
+```javascript
+const promise1 = Promise.resolve(42);
+const promise2 = Promise.reject(new Error("fail"));
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "foo");
+});
+
+Promise.allSettled([promise1, promise2, promise3]).then((results) => {
+  console.log(results);
+  // [
+  //   { status: 'fulfilled', value: 42 },
+  //   { status: 'rejected', reason: Error: fail },
+  //   { status: 'fulfilled', value: 'foo' }
+  // ]
+});
+```
+
+### `Promise.prototype.then(onFulfilled, onRejected)`
+
+Attaches callbacks for the resolution and/or rejection of the Promise.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("foo"), 300);
+});
+
+promise.then((value) => {
+  console.log(value); // "foo"
+});
+```
+
+### `Promise.prototype.catch(onRejected)`
+
+Attaches a callback for only the rejection of the Promise.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  reject(new Error("Oops!"));
+});
+
+promise.catch((error) => {
+  console.error(error); // Error: Oops!
+});
+```
+
+### `Promise.prototype.finally(onFinally)`
+
+Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected), allowing you to run some code regardless of the outcome.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  resolve("done");
+});
+
+promise
+  .then((value) => {
+    console.log(value); // "done"
+  })
+  .finally(() => {
+    console.log("Promise has been settled.");
+  });
+```
+
+### Additional Examples
+
+- **Chaining Promises:**
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  resolve(1);
+});
+
+promise
+  .then((value) => {
+    console.log(value); // 1
+    return value + 1;
+  })
+  .then((value) => {
+    console.log(value); // 2
+    return value + 1;
+  })
+  .then((value) => {
+    console.log(value); // 3
+  });
+```
+
+- **Handling Errors in Promises:**
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  reject(new Error("Failed"));
+});
+
+promise
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((error) => {
+    console.error("Caught:", error.message); // "Caught: Failed"
+  });
+```
+
+- **Using `async`/`await` with Promises: [refer next topic - Interview Question]**
+
+```javascript
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function asyncFunction() {
+  console.log("Start");
+  await delay(1000);
+  console.log("After 1 second");
+}
+
+asyncFunction();
+```
+
+- **Executing Multiple Promises Sequentially:**
+
+```javascript
+function asyncTask(value, ms) {
+  return new Promise((resolve) => setTimeout(() => resolve(value), ms));
+}
+
+async function executeSequentially() {
+  const result1 = await asyncTask(1, 1000);
+  console.log(result1); // 1
+
+  const result2 = await asyncTask(2, 1000);
+  console.log(result2); // 2
+
+  const result3 = await asyncTask(3, 1000);
+  console.log(result3); // 3
+}
+
+executeSequentially();
+```
+
+- **Promise Timeout Example:**
+
+```javascript
+function timeoutPromise(promise, ms) {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error("Timeout")), ms)
+  );
+  return Promise.race([promise, timeout]);
+}
+
+const delayedPromise = new Promise((resolve) =>
+  setTimeout(() => resolve("Success"), 5000)
+);
+
+timeoutPromise(delayedPromise, 2000)
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((error) => {
+    console.error(error.message); // "Timeout"
+  });
+```
 
 ## Async / Await
 
@@ -352,6 +623,8 @@ console.log(bool); // true
 ## Handling Mouse Events
 
 ## Handling Keyboard Events
+
+```
 
 ```
 
