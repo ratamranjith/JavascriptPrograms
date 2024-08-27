@@ -148,8 +148,6 @@ function greet() {
 
 Type coercion in JavaScript is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). JavaScript provides both implicit and explicit ways to perform type coercion.
 
-## Table of Contents
-
 1. [Implicit Coercion](#implicit-coercion)
    - [String Coercion](#string-coercion)
    - [Number Coercion](#number-coercion)
