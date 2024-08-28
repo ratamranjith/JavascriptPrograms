@@ -38,19 +38,6 @@
 34. [Why We Need Promise?](#why-we-need-promise)
 35. [Async / Await](#async--await)
 36. [JavaScript DOM](#javascript-dom)
-37. [Getting Element by Id](#getting-element-by-id)
-38. [Getting Element by Name](#getting-element-by-name)
-39. [Getting Elements by Class Name](#getting-elements-by-class-name)
-40. [Getting Elements by Tag Name](#getting-elements-by-tag-name)
-41. [Getting Child Elements](#getting-child-elements)
-42. [Getting Parent Element](#getting-parent-element)
-43. [Create Element](#create-element)
-44. [Remove Element](#remove-element)
-45. [Get Attribute of Element](#get-attribute-of-element)
-46. [Create or Update Attribute](#create-or-update-attribute)
-47. [Types of Event Handlers](#types-of-event-handlers)
-48. [Handling Mouse Events](#handling-mouse-events)
-49. [Handling Keyboard Events](#handling-keyboard-events)
 
 ## Introduction
 
@@ -594,38 +581,215 @@ timeoutPromise(delayedPromise, 2000)
 
 ## Async / Await
 
-## JavaScript DOM
+## JavaScript DOM [Basic - Interview Question]
+
+### Table of Contents
+
+1. [Getting Element by Id](#getting-element-by-id)
+2. [Getting Element by Name](#getting-element-by-name)
+3. [Getting Elements by Class Name](#getting-elements-by-class-name)
+4. [Getting Elements by Tag Name](#getting-elements-by-tag-name)
+5. [Getting Child Elements](#getting-child-elements)
+6. [Getting Parent Element](#getting-parent-element)
+7. [Create Element](#create-element)
+8. [Remove Element](#remove-element)
+9. [Get Attribute of Element](#get-attribute-of-element)
+10. [Create or Update Attribute](#create-or-update-attribute)
+11. [Types of Event Handlers](#types-of-event-handlers)
+12. [Handling Mouse Events](#handling-mouse-events)
+13. [Handling Keyboard Events](#handling-keyboard-events)
 
 ## Getting Element by Id
 
+The `getElementById()` method is used to access an HTML element by its unique `id` attribute.
+
+### Example:
+
+```javascript
+const element = document.getElementById("myElementId");
+console.log(element);
+```
+
+This will retrieve the element with the `id` of `myElementId` and allow you to manipulate it.
+
 ## Getting Element by Name
+
+The `getElementsByName()` method returns a NodeList of all elements with a given `name` attribute.
+
+### Example:
+
+```javascript
+const elements = document.getElementsByName("myElementName");
+elements.forEach((element) => console.log(element));
+```
+
+This retrieves all elements with the `name` of `myElementName`.
 
 ## Getting Elements by Class Name
 
+The `getElementsByClassName()` method returns a collection of elements with a specified class name.
+
+### Example:
+
+```javascript
+const elements = document.getElementsByClassName("myClassName");
+Array.from(elements).forEach((element) => console.log(element));
+```
+
+This retrieves all elements with the class name `myClassName`.
+
 ## Getting Elements by Tag Name
+
+The `getElementsByTagName()` method returns a live HTMLCollection of elements with a given tag name.
+
+### Example:
+
+```javascript
+const elements = document.getElementsByTagName("div");
+Array.from(elements).forEach((element) => console.log(element));
+```
+
+This retrieves all `<div>` elements in the document.
 
 ## Getting Child Elements
 
+The `children` property returns a live HTMLCollection of the child elements of a specified element.
+
+### Example:
+
+```javascript
+const parentElement = document.getElementById("parent");
+const childElements = parentElement.children;
+Array.from(childElements).forEach((child) => console.log(child));
+```
+
+This retrieves all child elements of the element with `id` `parent`.
+
 ## Getting Parent Element
+
+The `parentElement` property returns the parent element of a specified element.
+
+### Example:
+
+```javascript
+const childElement = document.getElementById("child");
+const parentElement = childElement.parentElement;
+console.log(parentElement);
+```
+
+This retrieves the parent element of the element with `id` `child`.
 
 ## Create Element
 
+The `createElement()` method creates an HTML element specified by tag name.
+
+### Example:
+
+```javascript
+const newElement = document.createElement("div");
+newElement.textContent = "Hello, World!";
+document.body.appendChild(newElement);
+```
+
+This creates a new `<div>` element with the text "Hello, World!" and appends it to the body.
+
 ## Remove Element
+
+The `remove()` method removes the specified element from the DOM.
+
+### Example:
+
+```javascript
+const elementToRemove = document.getElementById("myElement");
+elementToRemove.remove();
+```
+
+This removes the element with `id` `myElement` from the DOM.
 
 ## Get Attribute of Element
 
+The `getAttribute()` method returns the value of a specified attribute on an element.
+
+### Example:
+
+```javascript
+const element = document.getElementById("myElement");
+const attributeValue = element.getAttribute("data-value");
+console.log(attributeValue);
+```
+
+This retrieves the value of the `data-value` attribute on the element with `id` `myElement`.
+
 ## Create or Update Attribute
+
+The `setAttribute()` method adds a new attribute or changes the value of an existing attribute on an element.
+
+### Example:
+
+```javascript
+const element = document.getElementById("myElement");
+element.setAttribute("data-value", "newValue");
+```
+
+This sets the `data-value` attribute to `newValue` on the element with `id` `myElement`.
 
 ## Types of Event Handlers
 
+Event handlers can be added to HTML elements to respond to user interactions. There are three common ways to add event handlers:
+
+1. **Inline Event Handlers:** Specified directly within the HTML element.
+
+   ```html
+   <button onclick="alert('Button Clicked!')">Click Me</button>
+   ```
+
+2. **Property Event Handlers:** Assigned as properties of DOM elements.
+
+   ```javascript
+   const button = document.getElementById("myButton");
+   button.onclick = () => alert("Button Clicked!");
+   ```
+
+3. **Event Listener Method:** Using `addEventListener()` to register an event handler.
+   ```javascript
+   const button = document.getElementById("myButton");
+   button.addEventListener("click", () => alert("Button Clicked!"));
+   ```
+
 ## Handling Mouse Events
+
+Mouse events are fired when the user interacts with the mouse, such as clicking or moving the cursor.
+
+### Common Mouse Events:
+
+- `click`: Fired when the user clicks on an element.
+- `dblclick`: Fired when the user double-clicks on an element.
+- `mouseover`: Fired when the user moves the mouse over an element.
+- `mouseout`: Fired when the user moves the mouse out of an element.
+
+### Example:
+
+```javascript
+const button = document.getElementById("myButton");
+button.addEventListener("click", () => alert("Button Clicked!"));
+```
 
 ## Handling Keyboard Events
 
+Keyboard events are fired when the user interacts with the keyboard, such as pressing a key.
+
+### Common Keyboard Events:
+
+- `keydown`: Fired when a key is pressed.
+- `keyup`: Fired when a key is released.
+- `keypress`: Fired when a key that produces a character value is pressed down.
+
+### Example:
+
+```javascript
+document.addEventListener("keydown", (event) => {
+  console.log(`Key pressed: ${event.key}`);
+});
 ```
 
-```
-
-```
-
-```
+This logs the key that was pressed.
